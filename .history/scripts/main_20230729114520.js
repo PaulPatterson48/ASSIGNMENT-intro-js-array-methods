@@ -39,9 +39,6 @@ const search = (event) => {
   })
   renderCards(searchResults);
 }
-//Calculate Cart Total
-
-
 
 // BUTTON FILTER
 // .filter() & .reduce() &.sort() - chaining
@@ -75,8 +72,8 @@ const buttonFilter = (event) => {
     </thead>
     <tbody>
     `;
-    //!Will stort by alphabetical order --
-    productList().sort(((a,b) => a.type.localeCompare(b.type))).forEach(item => {
+    
+    productList().forEach(item => {
       table += tableRow(item);
     });
 
@@ -90,17 +87,8 @@ const buttonFilter = (event) => {
 // CALCULATE CART TOTAL
 // .reduce() & .some()
 const cartTotal = () => {
-  const cart = referenceList.filter( c => c.inCart);
-  //Update the total using the reduce method to change the value Will loop to continue to total to value
-  const total = cart.reduce((p1, p2) => p1 +  p2.price, 0);
-  //Tests for true or false 
-  const free = cart.some(f => f.price <= 0);
-  document.querySelector("cartTotal").innerHTML = total.toFixed(2);
-  if (free ){
-    document.querySelector('includes-free').innerHTML = 'INCLUDES FREE ITEMS'
-  }else {
-    document.querySelector('includes-free').innerHTML = ""
-  }
+  const total = 0
+  document.querySelector("#cartTotal").innerHTML = total.toFixed(2);
 }
 
 // RESHAPE DATA TO RENDER TO DOM

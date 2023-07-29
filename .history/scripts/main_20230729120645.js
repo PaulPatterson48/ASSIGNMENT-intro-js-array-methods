@@ -75,7 +75,7 @@ const buttonFilter = (event) => {
     </thead>
     <tbody>
     `;
-    //!Will stort by alphabetical order --
+    //Will stort by alphabetical order 
     productList().sort(((a,b) => a.type.localeCompare(b.type))).forEach(item => {
       table += tableRow(item);
     });
